@@ -4,7 +4,6 @@ import time
 MOVE_DISTANCE = 10
 SQUARE_SIZE = 20
 SQUARE_COLOR = "purple"
-SPEED_RANGE = [0.1, 0.09, 0.07, 0.05, 0.03]
 
 
 def create_square(position):
@@ -35,19 +34,23 @@ class Snake:
             self.snake.append(square)
 
     def move_left(self):
-        self.snake[0].setheading(180)
+        if self.snake[0].heading() != 0:
+            self.snake[0].setheading(180)
 
     def move_right(self):
-        self.snake[0].setheading(0)
+        if self.snake[0].heading() != 180:
+            self.snake[0].setheading(0)
 
     def move_up(self):
-        self.snake[0].setheading(90)
+        if self.snake[0].heading() != 270:
+            self.snake[0].setheading(90)
 
     def move_down(self):
-        self.snake[0].setheading(270)
+        if self.snake[0].heading() != 90:
+            self.snake[0].setheading(270)
 
     def move_snake(self):
-        time.sleep(SPEED_RANGE[self.snake_speed])
+        time.sleep(self.snake_speed)
         self.screen.update()
         '''move snake one square at a time'''
         for idx, square in enumerate(self.snake):
