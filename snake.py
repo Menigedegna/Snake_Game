@@ -3,10 +3,23 @@ import time
 
 MOVE_DISTANCE = 10
 SQUARE_SIZE = 20
+SQUARE_COLOR = "purple"
+SPEED_RANGE = [0.1, 0.09, 0.07, 0.05, 0.03]
+
+
+def create_square(position):
+    """returns turtle square"""
+    square = Turtle(shape="square")
+    square.shapesize(0.5, 0.5, 0)
+    square.color(SQUARE_COLOR)
+    square.penup()
+    square.goto(position)
+    return square
+
 
 class Snake:
 
-    def __init__(self, screen, snake_size, snake_speed=1):
+    def __init__(self, screen, snake_size, snake_speed):
         self.screen = screen
         self.screen.tracer(0)
         self.snake_size = snake_size
@@ -17,11 +30,7 @@ class Snake:
     def create_snake(self):
         x = (0, 0)
         for _ in range(self.snake_size):
-            square = Turtle(shape="square")
-            square.shapesize(0.5, 0.5, 0)
-            square.color("white")
-            square.penup()
-            square.goto(x)
+            square = create_square(x)
             x = (x[0] - SQUARE_SIZE, 0)
             self.snake.append(square)
 
@@ -38,7 +47,7 @@ class Snake:
         self.snake[0].setheading(270)
 
     def move_snake(self):
-        time.sleep(self.snake_speed/10)
+        time.sleep(SPEED_RANGE[self.snake_speed])
         self.screen.update()
         '''move snake one square at a time'''
         for idx, square in enumerate(self.snake):
@@ -57,10 +66,8 @@ class Snake:
 
     def add_snake_size(self):
         self.snake_size += 1
-        new_square = Turtle(shape="square")
-        new_square.shapesize(0.5, 0.5, 0)
-        new_square.color("white")
-        new_square.penup()
+        '''add a square at the end of snake '''
         last_square_position = self.snake[-1].position()
-        new_square.goto(last_square_position[0]-SQUARE_SIZE, last_square_position[1])
+        x = (last_square_position[0]-SQUARE_SIZE, last_square_position[1])
+        new_square = create_square(x)
         self.snake.append(new_square)

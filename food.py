@@ -1,7 +1,8 @@
 from turtle import Turtle
 from random import randint
 
-MARGIN = 20
+MARGIN = 40
+FOOD_COLOR = "yellow"
 
 
 class Food(Turtle):
@@ -10,7 +11,7 @@ class Food(Turtle):
         self.screen = screen
         self.shape("circle")
         self.shapesize(0.3, 0.3, 0)
-        self.color("purple")
+        self.color(FOOD_COLOR)
         self.penup()
         self.screen_width_center = round(screen_width/2) - MARGIN
         self.screen_height_center = round(screen_height/2) - MARGIN
