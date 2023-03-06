@@ -59,8 +59,9 @@ def start_game():
             game_is_on = score_board.display_game_over()
 
         # detect collision with snake's tail
-        if snake.snake[0].distance(snake.snake[-1]) <= 2:
-            game_is_on = score_board.display_game_over()
+        for idx in range(1, len(snake.snake)):
+            if snake.snake[0].distance(snake.snake[idx]) <= 1:
+                game_is_on = score_board.display_game_over()
 
     # keep track of scores
     score_max = max(score_max, score_board.score)
