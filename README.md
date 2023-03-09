@@ -1,6 +1,6 @@
 # Snake_Game
 
-<div style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2;">
+<div style="column-count: 2;">
     <div style="display: inline-block;">
     <img src="Snake_game.png" alt="image not found" width="200px">
     </div>
