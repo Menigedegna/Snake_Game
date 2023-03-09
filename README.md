@@ -6,7 +6,7 @@
     </div>
     <div class="col col-md-8" markdown="1">
         <p>Snake Game with python's module turtle
-        After running main.py
+        <br>After running main.py
         </p>
         <ul>
             <li>To start or restart game press **space** keypad</li> 
