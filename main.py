@@ -89,22 +89,42 @@ if __name__ == '__main__':
 
     # ask user to set speed for snake
     speed = prompt_user_speed(screen)
+
     # if user doesn't click on cancel when prompted for speed => start game
     if speed != "None":
         # convert speed input into integer
         speed = SPEED_RANGE[int(speed)]
+
+        # get recorded high score
+        with open("high_score_record.txt") as file:
+            data = file.read().strip()
+        high_score = data.split(" = ")[1]
+
         # draw borders for snake movement
         draw_walls(height=SCREEN_HEIGHT, width=SCREEN_WIDTH)
-        # create food
-        food = Food(screen=screen, screen_height=SCREEN_HEIGHT, screen_width=SCREEN_WIDTH)
+
         # create high score board
         highest_score_board = ScoreBoard(screen=screen, name="High score", screen_height=SCREEN_HEIGHT, x_position=80)
-        # create snake
-        snake = Snake(screen=screen, snake_speed=speed)
+        highest_score_board.score = int(high_score)
+        highest_score_board.clear()
+        highest_score_board.display_score()
+
         # create game score board
         score_board = ScoreBoard(screen=screen, name="Score", screen_height=SCREEN_HEIGHT, x_position=-80)
+
+        # create snake
+        snake = Snake(screen=screen, snake_speed=speed)
+
+        # create food
+        food = Food(screen=screen, screen_height=SCREEN_HEIGHT, screen_width=SCREEN_WIDTH)
+
         # start game
         start_game()
+
+        # record the highest score in txt file
+        with open("high_score_record.txt", "w") as file:
+            file.write(f"high_score = {highest_score_board.score}")
+
     # if user click cancel when prompted for speed => close screen
     else:
         screen.bye()
