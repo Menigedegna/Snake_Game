@@ -2,7 +2,7 @@
 <table border="0">
     <tr>
         <td>
-            <img src="Snake_game.png" alt="image not found" width="200px">
+            <img src="Snake_game.png" alt="game screenshot" width="200px">
         </td>
         <td>
             <p>Snake Game with python's module turtle
