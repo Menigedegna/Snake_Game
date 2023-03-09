@@ -6,3 +6,6 @@ After running main.py
 - To move the snake Down, press **Down** keypad
 - To move the snake Left, press **Left** keypad
 - To move the snake Right, press **Right** keypad
+
+
+<img src="Snake_game.png" alt="image not found" width="200px"/>
