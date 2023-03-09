@@ -1,10 +1,10 @@
 # Snake_Game
 
 <div class="row">
-    <div class="col-md-4" markdown="1">
+    <div class="col col-md-4" markdown="1">
     <img src="Snake_game.png" alt="image not found" width="200px">
     </div>
-    <div class="col-md-8" markdown="1">
+    <div class="col col-md-8" markdown="1">
         <p>Snake Game with python's module turtle<br>
         After running main.py
         </p>
