@@ -3,7 +3,7 @@ import time
 
 MOVE_DISTANCE = 10
 SQUARE_SIZE = 20
-SQUARE_COLOR = "purple"
+SQUARE_COLOR = (255, 64, 64)
 SNAKE_SIZE = 3
 
 

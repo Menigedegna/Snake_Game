@@ -1,8 +1,10 @@
 from turtle import Turtle
 
-SCORE_COLOR = "white"
-FONT = ("Times New Roman", 12, "normal")
-GAME_OVER_COLOR = "red"
+SCORE_COLOR = (30, 144, 255)
+SCORE_FONT = ("Times New Roman", 12, "normal")
+ALERT_FONT = ("Times New Roman", 18, "normal")
+
+GAME_OVER_COLOR = (255, 64, 64)
 
 
 class ScoreBoard(Turtle):
@@ -27,7 +29,7 @@ class ScoreBoard(Turtle):
     def display_score(self):
         """display score on screen"""
         self.color(SCORE_COLOR)
-        self.write(f"{self.name}: {self.score}", align="center", font=FONT)
+        self.write(f"{self.name}: {self.score}", align="center", font=SCORE_FONT)
 
     def add_score(self):
         """increment score and displays it on screen"""
@@ -38,7 +40,7 @@ class ScoreBoard(Turtle):
     def display_game_over(self):
         self.color(GAME_OVER_COLOR)
         self.goto(0, 0)
-        self.write(f"GAME OVER", align="center", font=FONT)
+        self.write(f"GAME OVER", align="center", font=ALERT_FONT)
         continue_game = False
         return continue_game
 

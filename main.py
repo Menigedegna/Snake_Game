@@ -11,7 +11,7 @@ SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 600
 SCREEN_BG_COLOR = "black"
 WINDOW_TITLE = "Snake Game"
-BORDER_COLOR = "white"
+BORDER_COLOR = (255, 140, 0)
 
 
 def prompt_user_speed(screen_name):
@@ -86,6 +86,7 @@ if __name__ == '__main__':
     screen.bgcolor(SCREEN_BG_COLOR)
     screen.setup(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
     screen.title(WINDOW_TITLE)
+    screen.colormode(255)
 
     # ask user to set speed for snake
     speed = prompt_user_speed(screen)
