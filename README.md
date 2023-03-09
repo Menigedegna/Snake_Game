@@ -1,10 +1,10 @@
 # Snake_Game
 
-<div style="column-count: 2;">
-    <div style="display: inline-block;">
+<div class="row">
+    <div class="col-md-4">
     <img src="Snake_game.png" alt="image not found" width="200px">
     </div>
-    <div style="display: inline-block;">
+    <div class="col-md-8">
         <p>Snake Game with python's module turtle<br>
         After running main.py
         </p>
