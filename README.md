@@ -1,4 +1,5 @@
 # Snake_Game
+:::::: {.cols data-latex=""}
 
 ::: {.col data-latex="{0.55\textwidth}"}
     <img src="Snake_game.png" alt="image not found" width="200px">
