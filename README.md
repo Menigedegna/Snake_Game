@@ -6,7 +6,7 @@
         </td>
         <td>
             <p>Snake Game with python's module turtle
-            <br>After running main.py
+            <br>Few instructions ...
             </p>
             <ul>
                 <li>To start or restart game press **space** keypad</li> 
